@@ -48,10 +48,10 @@ npm run build
 
 | Repository | Responsibility | Initial stack | Status |
 | --- | --- | --- | --- |
-| `atlas-ai-tech-lead` | Web command center and user workflow | React, Vite | Active |
-| `atlas-core-api` | Diagnostic sessions, domain rules, security, orchestration | Java 21, Spring Boot 3 | Planned |
-| `atlas-intelligence-service` | Model gateway, RAG retrieval, MCP adapters and safety policies | Java 21, Spring AI or LangChain4j | Planned |
-| `atlas-platform` | Local platform, observability and infrastructure as code | Docker Compose, OpenTelemetry, Grafana stack, Terraform | Planned |
+| [`atlas-ai-tech-lead`](https://github.com/lucascoliveira-tech/atlas-ai-tech-lead) | Web command center and user workflow | React, Vite | Active |
+| [`atlas-core-api`](https://github.com/lucascoliveira-tech/atlas-core-api) | Diagnostic sessions, domain rules, security, orchestration | Java 21, Spring Boot 3 | Repository created · bootstrap pending |
+| [`atlas-intelligence-service`](https://github.com/lucascoliveira-tech/atlas-intelligence-service) | Model gateway, RAG retrieval, MCP adapters and safety policies | Java 21, Spring AI or LangChain4j | Repository created · bootstrap pending |
+| [`atlas-platform`](https://github.com/lucascoliveira-tech/atlas-platform) | Local platform, observability and infrastructure as code | Docker Compose, OpenTelemetry, Grafana stack, Terraform | Repository created · bootstrap pending |
 
 RAG and MCP start as modules inside `atlas-intelligence-service`. They should only become independent services when scaling, security boundaries, or deployment cadence justify that separation.
 
