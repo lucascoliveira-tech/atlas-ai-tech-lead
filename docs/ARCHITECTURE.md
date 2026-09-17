@@ -84,16 +84,18 @@ atlas-platform/
 - Every recommendation includes its evidence and limitations
 - Rollback, scaling, deployment, and configuration changes require human approval
 
-## Initial API surface
+## Confirmed API surface (atlas-core-api, `/api/v1`)
 
 ```text
-POST /v1/diagnostics
-GET  /v1/diagnostics/{id}
-POST /v1/diagnostics/{id}/analysis
-GET  /v1/diagnostics/{id}/architecture
-GET  /v1/diagnostics/{id}/recommendations
-GET  /v1/diagnostics/{id}/runbook
+POST /api/v1/diagnostic-sessions
+GET  /api/v1/diagnostic-sessions/{id}
+GET  /api/v1/diagnostic-sessions?page&size
+POST /api/v1/diagnostic-sessions/{id}/analysis   (Idempotency-Key required)
+GET  /api/v1/diagnostic-sessions/{id}/analysis
+GET  /api/v1/diagnostic-sessions/{id}/analysis/{version}
 ```
+
+Analysis generation is synchronous: the POST call blocks until the result is persisted or the request fails. There is no polling in this contract today. Errors are returned as `application/problem+json`.
 
 ## Evolution criteria
 
